@@ -14,7 +14,16 @@ app.set("view engine","ejs")
 app.use(express.static(path.join(__dirname,"public")))
 
 app.get('/', function(req,res) {
-    res.send("Olá Dedier!")
+    res.render('index.ejs',{})
+})
+
+app.get('/usuarios', function(req,res) {
+    res.render('usuarios.ejs',{usuarios:[
+        {nome:'Diego',email:'dapporcellis@hotmail.com'},
+        {nome:'maria',email:'maria@gmail.com'},
+        {nome:'Tereza',email:'Tereza@gmail.com.com'},
+        {nome:'Ana',email:'Ana@gmail.com.com'},
+    ]})
 })
 
 app.listen(3000,function() {
