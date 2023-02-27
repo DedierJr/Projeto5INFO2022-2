@@ -13,6 +13,10 @@ app.get('/spbre', function(req,res) {
     res.send("Esta página está sendo desenvolvida por Dedier!")
 })
 
+app.get('/layout', function(req,res) {
+    res.send("Esse é o novo Layout!")
+})
+
 app.listen(3000,function() {
     console.log("Conexão inicializada")
 })
