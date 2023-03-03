@@ -9,5 +9,21 @@
 <body>
     <h1>Página Inicial</h1>
     <p>Seja bem-vindo a minha página inicial.</p>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Foto</th>
+        </tr>
+        <%for(usuario od Usuarios){%>
+        <tr>
+            <td><%=usuario._id%></td>
+            <td><%=usuario._nome%></td>
+            <td><%=usuario._email%></td>
+            <td><%=usuario._foto%></td>
+        </tr>
+        <% } %>
+    </table>
 </body>
 </html>
