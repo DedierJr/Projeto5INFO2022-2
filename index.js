@@ -15,10 +15,6 @@ app.set("view engine","ejs")
 app.use(express.static(path.join(__dirname,"public")))
 
 app.get('/', function(req,res) {
-    res.render('index.ejs',{})
-})
-
-app.get('/', function(req,res) {
     Usuario.find({}).exec()
         .then(function(docs){
             res.render('index.ejs',{Usuarios:docs})
