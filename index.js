@@ -25,6 +25,19 @@ app.get('/', function(req,res) {
         })
 })
 
+app.post('/', function(req, res) {
+    Usuario.find({nome: new RegExp(req.body.txtPesquisa,'gi')})
+        .exec()
+        .then(function(docs) {
+            res.render('index.ejs', {Usuarios: docs});
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.status(500).send("Erro ao buscar usuários");
+        });
+});
+
+
 app.get('/add',function(req,res) {
     res.render('adiciona.ejs')
 })
@@ -53,6 +66,33 @@ app.get('/del/:id', function(req, res) {
             res.status(500).send("Erro ao excluir usuário");
         });
     console.log(req.params.id);
+});
+
+app.get('/edit/:id', function(req, res) {
+    Usuario.findById(req.params.id)
+        .then(function(docs) {
+            res.render('edita.ejs', {Usuario: docs});
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.status(500).send("Erro ao buscar usuário");
+        });
+});
+
+app.post('/edit/:id/', function(req, res) {
+    Usuario.findByIdAndUpdate(req.params.id, {
+        nome: req.body.txtNome, 
+        email: req.body.txtEmail, 
+        senha: req.body.txtsenha, 
+        foto: req.body.txtFoto
+    })
+        .then(function(docs) {
+            res.redirect('/');
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.status(500).send("Erro ao atualizar usuário");
+        });
 });
 
 app.listen(3000,function() {
