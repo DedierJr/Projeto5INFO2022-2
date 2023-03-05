@@ -1,33 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuários</title>
-    <style>
-        table,td,th {
-            border: 1px solid black;
-            border-collapse: collapse;
-            padding: 5px;
-        }
-
-        th {
-            font-weight: bolder;
-        }
-    </style>
-</head>
-<body>
-    <h1>Usuários</h1>
-    <ul>
-        <li><a href="/add">Adicionar</a></li>
-        <li><a href="/">Listar</a></li>
-    </ul>
-    <form method="post">
-        Pesquisar: <input type="text" name="txtPesquisa" placeholder="Pesquisar">
-        <input type="submit" value="Pesquisar">
-    </form>
-    <br>
+<%-include('cabecalho.ejs')%>
+<form method="post">
+    Pesquisar: <input type="text" name="txtPesquisa" placeholder="Pesquisar">
+    <input type="submit" value="Pesquisar">
+</form>
+<br>
     <table>
         <tr>
             <th>ID</th>
@@ -48,5 +24,4 @@
         </tr>
         <% } %>
     </table>
-</body>
-</html>
+    <%-include('rodape.ejs')%>
