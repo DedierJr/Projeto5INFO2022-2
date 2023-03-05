@@ -43,6 +43,18 @@ app.post('/add',function(req,res) {
     })
 })
 
+app.get('/del/:id', function(req, res) {
+    Usuario.findByIdAndDelete(req.params.id)
+        .then(function() {
+            res.redirect('/');
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.status(500).send("Erro ao excluir usuário");
+        });
+    console.log(req.params.id);
+});
+
 app.listen(3000,function() {
     console.log("Conexão inicializada")
 })
