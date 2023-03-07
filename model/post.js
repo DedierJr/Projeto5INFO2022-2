@@ -1,7 +1,6 @@
 const conexao = require('../config/conexao');
 
 const postSchema = new mongoose.Schema({
-    titulo:  String,
     texto: String,
     data: Date,
     foto: String,
