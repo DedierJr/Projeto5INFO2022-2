@@ -1,4 +1,4 @@
-const conexao = require('../config/conexao');
+const mongoose = require('../config/conexao');
 
 const postSchema = new mongoose.Schema({
     texto: String,
@@ -10,6 +10,6 @@ const postSchema = new mongoose.Schema({
     }
 });
 
-const post = conexao.model('post', postSchema);
+const post = mongoose.model('post', postSchema);
 
 module.exports = post

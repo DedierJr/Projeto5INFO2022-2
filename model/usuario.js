@@ -1,6 +1,6 @@
-var conexao = require('../config/conexao')
+var mongoose = require('../config/conexao')
 
-var UsuarioSchema = conexao.Schema({
+var UsuarioSchema = mongoose.Schema({
     nome:{type:String},
     email:{type:String},
     senha:{type:String},
@@ -8,4 +8,4 @@ var UsuarioSchema = conexao.Schema({
 })
 
 
-module.exports = conexao.model("Usuario",UsuarioSchema)
+module.exports = mongoose.model("Usuario",UsuarioSchema)

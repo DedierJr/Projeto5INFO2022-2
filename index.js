@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const router = express.Router();
+const postController = require('../controllers/postController');
 var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
 var path = require('path')
@@ -95,6 +97,9 @@ app.post('/edit/:id/',upload.single("txtFoto"),function(req, res) {
             res.status(500).send("Erro ao atualizar usuário");
         });
 });
+
+router.get('/posts/add', postController.abreadd);
+router.post('/posts/add', postController.add);
 
 app.listen(3000,function() {
     console.log("Conexão inicializada")
