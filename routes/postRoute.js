@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const upload = require('../config/upload')
 
-const postController = require('../controllers/postController');
+const postController = require('../controller/postController')
 
 router.get('/post/add',postController.abreadd)
 router.post('/post/add', upload.single('foto'), postController.add)

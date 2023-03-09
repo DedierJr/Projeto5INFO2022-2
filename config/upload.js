@@ -2,7 +2,7 @@ const multer = require('multer');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'public/pictures')
+        cb(null, 'public/fotos')
     },
     filename: function (req, file, cb) {
         const prefixounico = Date.now() + '-' + Math.round(Math.random() * 1E9)
