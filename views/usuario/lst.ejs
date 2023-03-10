@@ -1,0 +1,39 @@
+<%- include('../cabecalho.ejs') %>
+<main>
+    <form method="post" class="form_lst">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Pesquisar</label>
+            <input name="pesquisar" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Pesquisar">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Pesquisar">
+    </form>
+    <table class="tabela">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Foto</th>
+            <th>Editar</th>
+            <th>Deletar</th>
+        </tr>
+        <% Usuarios.forEach(function(usuario){ %>
+            <tr>
+                <td><%=usuario._id %></td>
+                <td><%=usuario.nome %></td>
+                <td><%=usuario.email %></td>
+                <td><%=usuario.senha %></td>
+                <td>
+                    <img style="max-width: 50px;" src="/fotos/<%=usuario.foto %>" alt="Foto do usuário">
+                </td>
+                <td>
+                    <a href="/admin/usuario/edt/<%=usuario._id %>">Editar</a>
+                </td>
+                <td>
+                    <a href="/admin/usuario/del/<%=usuario._id %>">Excluir</a>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+</main>
+<%- include('../rodape.ejs') %>
