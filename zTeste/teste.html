@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muusiic</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+        /*font-family: 'Russo One', sans-serif;*/
+
+        @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+        /*font-family: 'Kanit', sans-serif;*/
+
+
+        :root {
+            --cor1: #FDFFFC;
+            --cor2: #227396;
+            --cor3: #A1020A;
+            --cor4: #620410;
+            --cor5: #0C181D;
+            --cor6: #08090a;
+            
+            --fonte1: 'Kanit', sans-serif;
+            --fonte2: 'Russo One', sans-serif;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body {
+            font-family: var(--fonte1);
+            background-color: var(--cor5);
+            background-image: url('https://images.pexels.com/photos/4335772/pexels-photo-4335772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        a {
+            color: var(--cor1);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: var(--cor2);
+        }
+
+        header {
+            background-color: var(--cor6);
+            padding: 3vh;
+        }
+
+        main {
+            height: 96vh;
+            padding: 0 5% 0 5%;
+        }
+
+        .tabela {
+            background-color: var(--cor1);
+            width: 100%;
+        }
+
+        .tabela a {
+            color: var(--cor4);
+        }
+
+        .tabela a:hover {
+            color: var(--cor3);
+        }
+
+        .form {
+            background-color: var(--cor1);
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            border-radius: 30px;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+        }
+
+        .form_p{
+            font-family: var(--fonte1);
+            color: var(--cor6);
+        }
+
+        .form_post {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            width: 500px;
+            margin: 0 auto;
+            }
+
+            .form_post input[type="text"],
+            .form_post textarea,
+            .form_post select {
+            font-size: 1.2rem;
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--cor1);
+            width: 100%;
+            }
+
+            .form_post input[type="file"] {
+            font-size: 1.2rem;
+            margin: 5px;
+            }
+
+            .form_post input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: var(--cor2);
+            color: var(--cor1);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            }
+
+            .form_post input[type="submit"]:hover {
+            background-color: var(--cor4);
+        }
+
+
+        .form_lst {
+            background-color: var(--cor1);
+        }
+
+        .button-links {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+        }
+
+        .button-link {
+            background-color: var(--cor1);
+            height: 25px;
+            width: 400px;
+            display: inline-block;
+            padding: 12px 24px;
+            margin-bottom: 30px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .button-link:hover {
+            background-color: var(--cor3);
+            color: var(--cor1);
+            transition-duration: 0.5s;
+            text-decoration: none;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-family: var(--fonte2);
+        }
+
+        p {
+            color: white;
+        }
+
+        footer {
+            height: 1vh;
+            background-color: var(--cor6);
+            padding: 25px;
+            text-align: center;
+        }
+</style>
+</head>
+<body>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <header>
+        <h1> <a href="/">Muusiic ♫</a></h1>
+    </header>
+<main>
+    <form method="post" enctype="multipart/form-data" class="form_post">
+        Título<br>
+        <input class="form-control" type="text" name="titulo" placeholder="Digite o título do post.">
+        <br><br>
+        Texto<br>
+        <textarea class="form-control" name="texto" placeholder="Digite o texto do post"></textarea>
+        <br><br>
+        Foto<br>
+        <br><br>
+        Usuário<br>
+        <select class="form-select" name="usuario" aria-label="Selecione um usuário!">
+        </select>
+        <br><br>
+        <input type="submit" value="Adicionar">
+      </form>
+</main>
+<footer>
+    <p>Site criado por <a href="https://github.com/DedierJr">DedierJr</a></p>
+</footer>
+</body>
+</html>

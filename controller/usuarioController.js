@@ -5,6 +5,11 @@ function abreadd(req,res){
 }
 
 function add(req,res){
+    if (!req.file) {
+        console.log("Erro: nenhum arquivo enviado com a requisição.");
+        return res.status(400).send("Erro: nenhum arquivo enviado com a requisição.");
+    }
+
     let usuario = new Usuario({
         nome: req.body.nome,
         email: req.body.email,
