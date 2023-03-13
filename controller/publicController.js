@@ -6,6 +6,15 @@ function abreindex(req,res){
     })
 }
 
+exports.renderTimeline = (req, res) => {
+    res.render('timeline');
+};
+  
+
 module.exports = {
     abreindex 
+}
+
+module.exports = {
+    renderTimeline
 }

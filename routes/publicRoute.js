@@ -5,4 +5,6 @@ const publicController = require('../controller/publicController')
 
 router.get('/',publicController.abreindex)
 
+router.get('/timeline', publicController.renderTimeline);
+
 module.exports = router
