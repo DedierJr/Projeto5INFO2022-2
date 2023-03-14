@@ -1,0 +1,12 @@
+const mongoose = require('../config/conexao');
+
+const AlbumSchema = new mongoose.Schema({
+  titulo: { type: String, required: true },
+  artista: { type: mongoose.Schema.Types.ObjectId, ref: 'Artista', required: true },
+  lancamento: { type: Date },
+  generos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Genero' }]
+});
+
+const Album = mongoose.model('Album', AlbumSchema);
+
+module.exports = Album;
